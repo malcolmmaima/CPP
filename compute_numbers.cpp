@@ -45,9 +45,9 @@ int main(){
             i = i + 1; // We loop here until while loop is false then we exit loop
     }
     cout << "*****************" << endl;
-    cout << "SUM => " << sumArray( sum, numbers ) << endl;
-    cout << "AVERAGE => " << averageArray(sum, numbers) << endl;
-    cout << "HIGHEST => " << largestArray(sum, numbers)<< endl;
+    cout << "SUM ==> " << sumArray( sum, numbers ) << endl;
+    cout << "AVERAGE ==> " << averageArray(sum, numbers) << endl;
+    cout << "HIGHEST ==> " << largestArray(sum, numbers)<< endl;
     cout << "***** Done! *****" << endl;
 }
 
