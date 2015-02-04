@@ -2,13 +2,14 @@
 
 /* By Malcolm Maima */
 
-/* Bundled Computational functionalities in the below peice of code
+/* Bundled Computational functionalities in the peice of code below
 
 *  1. Store "N" number of values in an array
 *  2. Compute Sum, Average, Largest value, Smallest Value
 *  3. Display original array - Unsorted
 *  4. Sort Original Array to Sorted Array
 *  5. Search Array List
+*  6. Push value "1000" to last position of array
  */
 
 using namespace std;
@@ -90,9 +91,9 @@ void swap (int array[], int first_index, int second_index) {
                 cout << array[ i ];  }  cout << " }";
 }
 // Function to search element in array
-int List_search(int numbers[], int target){
+int List_search(int numbers[], int target, int size){
     int value = 0;
-    for ( int i = 0; i < 6; i++ )  {
+    for ( int i = 0; i < size; i++ )  {
             if(numbers[i] == target){
                 value = numbers[i];
             }
@@ -103,6 +104,20 @@ int List_search(int numbers[], int target){
         return value;
 }
 
+void push_array_to_last_position(int our_array[], int size){
+    //Okay so we're supposed to append the value 1000 to the last position of the sorted array
+    int value = 1000;
+    int last_array_pos = size - 1;
+    our_array[last_array_pos] = value;
+
+    cout << "{ ";  for ( int i = 0; i < size; i++ )
+        {   // lists--check if we're past the first element, and
+            // if so, append a comma
+            if ( i != 0 )   {
+                cout << ", ";
+            }
+                cout << our_array[ i ];  }  cout << " }";
+}
 int main(){
     int numbers;
     cout << "How many numbers do you want to enter: " << endl;
@@ -117,22 +132,22 @@ int main(){
             i = i + 1; // We loop here until while loop is false then we exit loop
     }
     cout << "\t *******************************" << endl;
-    cout << "\t *\t ELEMENTS => " << i << endl;
+    cout << "\t *\t ELEMENTS => " << i-1 << "\n" <<endl;
     cout << "\t *\t -----------------" << endl;
-    cout << "\t *\t SUM => " << sumArray( sum, numbers ) << endl;
+    cout << "\t *\t SUM => " << sumArray( sum, numbers ) << "\n" << endl;
     cout << "\t *\t -----------------" << endl;
-    cout << "\t *\t AVERAGE => " << averageArray(sum, numbers) << endl;
+    cout << "\t *\t AVERAGE => " << averageArray(sum, numbers) << "\n" << endl;
     cout << "\t *\t -----------------" << endl;
-    cout << "\t *\t LARGEST => " << largestArray(sum, numbers)<< endl;
+    cout << "\t *\t LARGEST => " << largestArray(sum, numbers) << "\n" << endl;
     cout << "\t *\t -----------------" << endl;
-    cout << "\t *\t SMALLEST => " << SmallestArray(sum, numbers)<< endl;
+    cout << "\t *\t SMALLEST => " << SmallestArray(sum, numbers) << "\n" << endl;
     cout << "\t *\t -----------------" << endl;
-    cout << "\t *\t ORIGINAL ARRAY: ";
-    displayArray( sum, numbers );
-    cout << '\n';
+    cout << "\t *\t ORIGINAL ARRAY: "; displayArray( sum, numbers ); cout << "\n";
     cout << "\t *\t -----------------" << endl;
     sort( sum, numbers );
-    cout << "\t *\t SORTED ARRAY: ";  displayArray( sum, numbers );  cout << '\n';
+    cout << "\t *\t SORTED ARRAY: ";  displayArray( sum, numbers ); cout << "\n";
+    cout << "\t *\t -----------------" << endl;
+    cout << "\t *\t PUSH 1000 to last position of array => "; push_array_to_last_position(sum, numbers); cout << "\n";
     cout << "\t *\t -----------------" << endl;
     cout << "\t *******************************" << endl;
 
@@ -143,12 +158,12 @@ int main(){
         //Run search here
     int input_code;
     cout << "\t *\t ---------------------------------------------" << endl;
-    cout << "\t *\t * NOTE: If Result = 0 then product not found *"<< endl;
+    cout << "\t *\t * NOTE: If Result = 0 then number not found *"<< endl;
     cout << "\t *\t   -------------------------------------------" << endl;
     cout << "\t *\t SEARCH ARRAY: ";
     cin >> input_code;
     cout << "\t *\t   ----------------------------------------------\n" << endl;
-    cout << "\t *\t Result " << List_search(sum, input_code) << " Found." << endl;
+    cout << "\t *\t Result " << List_search(sum, input_code, numbers) << " Found." << endl;
     cout << "\t *\t ------------------------------------------------" << endl;
     }
     else if(response == "n"){
