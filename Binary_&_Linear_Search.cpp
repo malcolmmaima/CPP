@@ -5,10 +5,13 @@
 *   ------------------------------
 *   By Malcolm Maima < www.malcolmmaima.com >
 *   Implementation of Binary and Linear Search
-*   *** Works like a Charm ***
+*
 */
 
 using namespace std;
+
+// *** A bit buggy but works just fine: Tweak it, suggest changes, Contribute, whatever :D ***
+
 
 void displayArray (int array[], int size) { //Format and display our Array nicely :D
         cout << "{ ";
@@ -75,7 +78,7 @@ void BinarySearch(int array[], int size, int target, int FirstIdex, int LastInde
 
             else if(array[mid] == target)
             {
-                    cout << "\t *\t Target Element " << target << " found at Location " << mid+1 << endl;
+                    cout << "\t *\t Target Element " << target << " found at Location " << mid+1 << "." <<endl;
                     break;
             }
             else
