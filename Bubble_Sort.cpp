@@ -5,17 +5,17 @@
 *   Simple Implementation of Bubble Sort Algorithm
 *
 *
-*  algorithm BubbleSort(list) ) 
-*  Pre: list =∅ ) 
-*  Post: list //has been sorted into values of ascending order 
-*  for i←0 to list.Count−1 ) 
-*   for j ←0 to list.Count−1 ) 
-*         if list[i] < list[j] ) 
-*          Swap(list[i],list[j]) 
-*           end if 
+*  algorithm BubbleSort(list) )
+*  Pre: list =∅ )
+*  Post: list //has been sorted into values of ascending order
+*  for i←0 to list.Count−1 )
+*   for j ←0 to list.Count−1 )
+*         if list[i] < list[j] )
+*          Swap(list[i],list[j])
+*           end if
 *     end for
-*   end for 
-*return list 
+*   end for
+*return list
 *end BubbleSort
 *
 */
@@ -36,13 +36,14 @@ void displayArray (int array[], int size) { //Format and display our Array nicel
 }
 
 
-void BubbleSort(int list[], int size) //Recieve user entered array and its size
+void BubbleSort(int list[], int size)
 {
     bool swapped = true;
     int j = 0;
-    int tmp; //Temporary holder to assist while swapping
+    int tmp;
 
-      while (swapped) { 
+      while (swapped) {
+
             swapped = false;
             j++;
 
@@ -53,7 +54,12 @@ void BubbleSort(int list[], int size) //Recieve user entered array and its size
                         list[i] = list[i + 1];
                         list[i + 1] = tmp;
                         swapped = true;
-                         cout << "Iteration (" << j << ") --> "; displayArray(list, size); cout << "\n \n";
+                         cout << "Iteration (" << j << ") : \n \n"; displayArray(list, size); cout << "\n";
+                         for(int j=0; j<size; j++)
+                         {
+                             cout << "----";
+                         }
+                         cout << "\n";
                   }
             }
       }
